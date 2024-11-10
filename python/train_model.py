@@ -7,7 +7,6 @@ from sklearn.linear_model import Lasso
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import pickle
-import matplotlib.pyplot as plt
 
 # Load the training dataset
 train_df = pd.read_csv('data/train.csv')
@@ -47,14 +46,6 @@ mse_lasso = mean_squared_error(y_val, y_pred_lasso)
 r2_lasso = r2_score(y_val, y_pred_lasso)
 mse_lasso_per_datapoint = mse_lasso / len(y_val)
 
-# Plot feature importance for Lasso Regression
-lasso_coefficients = lasso.coef_
-plt.figure(figsize=(10, 6))
-plt.barh(selected_features, lasso_coefficients)
-plt.xlabel('Coefficient Value')
-plt.title('Feature Importance for Lasso Regression')
-plt.show()
-
 # Train and evaluate Random Forest Regressor
 rf_model = RandomForestRegressor(n_estimators=100, random_state=42)
 rf_model.fit(X_train, y_train)
@@ -62,14 +53,6 @@ y_pred_rf = rf_model.predict(X_val)
 mse_rf = mean_squared_error(y_val, y_pred_rf)
 r2_rf = r2_score(y_val, y_pred_rf)
 mse_rf_per_datapoint = mse_rf / len(y_val)
-
-# Plot feature importance for Random Forest Regressor
-rf_importances = rf_model.feature_importances_
-plt.figure(figsize=(10, 6))
-plt.barh(selected_features, rf_importances)
-plt.xlabel('Importance Score')
-plt.title('Feature Importance for Random Forest Regressor')
-plt.show()
 
 # Hyperparameter tuning for Gradient Boosting Regressor
 param_grid = {
@@ -91,14 +74,6 @@ y_pred_gbr = gbr_best.predict(X_val)
 mse_gbr = mean_squared_error(y_val, y_pred_gbr)
 r2_gbr = r2_score(y_val, y_pred_gbr)
 mse_gbr_per_datapoint = mse_gbr / len(y_val)
-
-# Plot feature importance for Gradient Boosting Regressor
-gbr_importances = gbr_best.feature_importances_
-plt.figure(figsize=(10, 6))
-plt.barh(selected_features, gbr_importances)
-plt.xlabel('Importance Score')
-plt.title('Feature Importance for Gradient Boosting Regressor')
-plt.show()
 
 # Print the results for all models
 print("Lasso Regression:\n MSE: {:.2f}, MSE per datapoint: {:.2f}, R^2: {:.3f}".format(mse_lasso, mse_lasso_per_datapoint, r2_lasso))
