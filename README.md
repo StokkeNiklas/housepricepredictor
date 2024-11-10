@@ -1,8 +1,14 @@
-# 🎈 Blank app template
+# 🎈 Housing price predictor
 
-A simple Streamlit app template for you to modify!
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+
+### Nettside
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://hoursepricepredictor.streamlit.app)
+
+### Rapport ML oblig 2
+[![Open in Google Docs](https://img.shields.io/badge/Open_in-Google_Docs-blue?logo=google-drive&logoColor=white)](https://docs.google.com/document/d/1HSqsfMy6x_G_Qq2B8GVLDuqUcjI6YHuPco5AVsXQ2Bw/edit?usp=sharing)
+
+
 
 ### How to run it on your own machine
 
