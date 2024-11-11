@@ -31,9 +31,9 @@ data = {
     'GrLivArea': st.number_input("Ground Living Area (square meters)", min_value=0.0) * 10.764,
     'FullBath': st.slider("Number of Full Bathrooms", min_value=0, max_value=5),
     'HalfBath': st.slider("Number of Half Bathrooms", min_value=0, max_value=5),
-    'BedroomAbvGr': st.slider("Bedrooms Above Ground", min_value=0, max_value=10),
-    'KitchenAbvGr': st.slider("Kitchens Above Ground", min_value=0, max_value=5),
-    'TotRmsAbvGrd': st.slider("Total Rooms Above Ground", min_value=0, max_value=20),
+    'BedroomAbvGr': st.slider("Bedrooms", min_value=0, max_value=10),
+    'KitchenAbvGr': st.slider("Kitchens", min_value=0, max_value=5),
+    'TotRmsAbvGrd': st.slider("Total Rooms", min_value=0, max_value=20),
     'Fireplaces': st.slider("Number of Fireplaces", min_value=0, max_value=5),
     'GarageCars': st.slider("Number of Cars Garage Can Hold", min_value=0, max_value=5),
     'GarageArea': st.number_input("Garage Area (square meters)", min_value=0.0) * 10.764
